@@ -9,12 +9,35 @@ package org.jm.system.model;
  * @author informatica
  */
 public class Users {
-    private String id_user;
+    private String idUuser;
     private String name;
     private String lastname;
     private String email;
     private String password;
     private String user;
+    
+    public Users(){}
+
+    public Users(String idUuser, String name, String lastname, String email, String password, String user) {
+        this.idUuser = idUuser;
+        this.name = name;
+        this.lastname = lastname;
+        this.email = email;
+        this.password = password;
+        this.user = user;
+    }
+    
+        public Users(String idUuser, String name, String lastname, String email, String user) {
+        this.idUuser = idUuser;
+        this.name = name;
+        this.lastname = lastname;
+        this.email = email;
+        this.password = password;
+        this.user = user;
+    }
+    
+    
+
 
     public String getId_user() {
         return id_user;
