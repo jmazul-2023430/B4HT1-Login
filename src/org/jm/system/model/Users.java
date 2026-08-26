@@ -18,7 +18,7 @@ public class Users {
     
     public Users(){}
 
-    public Users(String idUser, String name, String lastname, String email, String password, String user) {
+    public Users(String idUser, String email, String name, String lastname, String password, String user) {
         this.idUser = idUser;
         this.name = name;
         this.lastname = lastname;
@@ -27,8 +27,8 @@ public class Users {
         this.user = user;
     }
     
-        public Users(String idUuser, String name, String lastname, String email, String user) {
-        this.idUser = idUuser;
+        public Users(String password, String email, String name, String lastname, String user) {
+        this.idUser = password;
         this.name = name;
         this.lastname = lastname;
         this.email = email;

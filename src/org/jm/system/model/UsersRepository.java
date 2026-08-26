@@ -11,12 +11,14 @@ package org.jm.system.model;
 import java.sql.CallableStatement;
 import org.jm.system.config.ConexionDB;
 import org.jm.system.model.UsersInterface;
+import java.sql.SQLException;
 public class UsersRepository implements UsersInterface{
     
     //CallebStatement
     private CallableStatement callSP;
     //ConexionDB
     private ConexionDB conexionDB  = ConexionDB.getInstanciaConexionDB();
+    public UsersRepository(){};
     
     @Override
     public void create(Users user){
@@ -30,7 +32,10 @@ public class UsersRepository implements UsersInterface{
             
             callSP.execute();
             callSP.close();
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            System.out.println("Error al crear usuario");
+            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 }
