@@ -9,26 +9,53 @@ package org.jm.system.utils;
  * @author informatica
  */
 public class Validations {
-    
-    public Validations(){}
-    public Boolean equalsText(String textOriginal, String textCompare){       
-       return textOriginal.equals(textCompare);
+
+    public Validations() {
     }
-    
-    public Boolean emptyText(String text){
+
+    public Boolean equalsText(String textOriginal, String textCompare) {
+        return textOriginal.equals(textCompare);
+    }
+
+    public Boolean emptyText(String text) {
         boolean isEmpty = false;
-        
-        if (text.isEmpty() || text.isBlank())
+
+        if (text.isEmpty() || text.isBlank()) {
             isEmpty = true;
-        
+        }
+
         return isEmpty;
     }
-    
-    public Boolean validateLengthText(String text, int lengthMax){
-            return text.length()<= lengthMax;
+
+    public Boolean validateLengthText(String text, int lengthMax) {
+        return text.length() <= lengthMax;
     }
-    
-    public Boolean validationEmail(String email){
+
+    public Boolean validateEmail(String email) {
+        int dotCount = 0;
+        int arrobeCount = 0;
+
+        for (int index = 0; index < email.length(); index++) {
+            if (email.charAt(index) == '.') {
+                dotCount++;
+            }
+
+            if (dotCount > 1) {
+                return false;
+            }
+        }
+
+        for (int index = 0; index < email.length(); index++) {
+            if (email.charAt(index) == '@') {
+                arrobeCount++;
+            }
+        }
+
+        if (arrobeCount != 1) {
+            return false;
+        }
+
         return true;
+
     }
 }
