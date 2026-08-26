@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.jm.system.controller.LoginController">
    <padding>
       <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
    </padding>
@@ -20,7 +20,7 @@
          <children>
             <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" styleClass="image">
                <image>
-                  <Image url="@../resources/images/user.jpg" />
+                  <Image url="@../resources/images/login.png" />
                </image>
             </ImageView>
             <Label styleClass="etiqueta" text="Ingrese su nombre de usuario" />
@@ -29,7 +29,7 @@
             <PasswordField styleClass="campo" />
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Hyperlink styleClass="link" text="No tienes cuenta? Registrate" />
+                  <Hyperlink onMouseClicked="#onRegister" styleClass="link" text="No tienes cuenta? Registrate" />
                </children>
             </HBox>
             <Button id="btn-login" mnemonicParsing="false" text="Iniciar Sesion" />

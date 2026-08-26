@@ -9,7 +9,7 @@ package org.jm.system.model;
  * @author informatica
  */
 public class Users {
-    private String idUuser;
+    private String idUser;
     private String name;
     private String lastname;
     private String email;
@@ -18,8 +18,8 @@ public class Users {
     
     public Users(){}
 
-    public Users(String idUuser, String name, String lastname, String email, String password, String user) {
-        this.idUuser = idUuser;
+    public Users(String idUser, String name, String lastname, String email, String password, String user) {
+        this.idUser = idUser;
         this.name = name;
         this.lastname = lastname;
         this.email = email;
@@ -28,7 +28,7 @@ public class Users {
     }
     
         public Users(String idUuser, String name, String lastname, String email, String user) {
-        this.idUuser = idUuser;
+        this.idUser = idUuser;
         this.name = name;
         this.lastname = lastname;
         this.email = email;
@@ -39,12 +39,12 @@ public class Users {
     
 
 
-    public String getId_user() {
-        return id_user;
+    public String getIdUser() {
+        return idUser;
     }
 
-    public void setId_user(String id_user) {
-        this.id_user = id_user;
+    public void setIdUser(String id_user) {
+        this.idUser = id_user;
     }
 
     public String getName() {
