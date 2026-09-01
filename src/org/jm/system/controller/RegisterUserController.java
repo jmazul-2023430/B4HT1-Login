@@ -57,6 +57,7 @@ public class RegisterUserController implements Initializable {
         boolean isValidEmail = validate.validateEmail(txtEmail.getText().trim());
         if (isValidEmail == false) {
             alertInfo.viewAlert(3, "ERROR EMAIL", "ERROR DE CAMPO", "HAS INGRESADO UN EMAIL INCORRECTO");
+            return;
         }
 
         String user, name, lastName, email, password, confirmPassword;
@@ -71,7 +72,7 @@ public class RegisterUserController implements Initializable {
                 || validate.emptyText(name) == true
                 || validate.emptyText(lastName) == true
                 || validate.emptyText(email) == true
-                || validate.emptyText(confirmPassword) == true
+                || validate.emptyText(password) == true
                 || validate.emptyText(confirmPassword) == true) {
 
             alertInfo.viewAlert(3, "ERROR DE CAMNPOS VACIOS", "ERROR DE CAMPO", "DEJO CAMPOS VACIOS EN EL FORMULARIO");
@@ -123,14 +124,20 @@ public class RegisterUserController implements Initializable {
         UserStatus status = userService.createUser(user, name, lastName, email, password);
         switch (status) {
             case UserStatus.ERROR_USER_CREATE ->
-                        System.out.println("Error al crear en el crtl");
-            case UserStatus.USER_CREATED ->
-                        System.out.println("Si se creo el usuario");
+                alertInfo.viewAlert(3, "ERROR AL CREAR USUARIO", "ERROR", msgField);
+            case UserStatus.USER_CREATED -> {
+                alertInfo.viewAlert(1, "CREACION DE USUARIO", "EXITO", "EL USUARIO FUE CREADO CON EXITO");
+                ViewFactory viewFactory = new ViewFactory();
+                viewFactory.viewLogin();
+            }
             case UserStatus.FIELDS_EMPTY ->
-                        System.out.println("Los campos no etsan vacios");
+                System.out.println("Los campos no etsan vacios");
             case UserStatus.VALUE_LENGTH_INVALID ->
-                        System.out.println("Validar longitud del texto");
-            default ->         System.out.println("Error desconocido");
+                System.out.println("Validar longitud del texto");
+            default ->
+                System.out.println("Error desconocido");
         }
+
     }
+
 }
