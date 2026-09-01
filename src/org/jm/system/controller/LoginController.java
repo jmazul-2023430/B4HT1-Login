@@ -15,15 +15,22 @@ import org.jm.system.utils.ViewFactory;
  *
  * @author informatica
  */
-public class LoginController implements Initializable{
+public class LoginController implements Initializable {
+
     @Override
-    public void initialize(URL url, ResourceBundle rb){
-        
+    public void initialize(URL url, ResourceBundle rb) {
+
     }
-    
+
     @FXML
-    public void onRegister(MouseEvent event){
+    public void onRegister(MouseEvent event) {
         ViewFactory viewFacto = new ViewFactory();
         viewFacto.viewRegister();
+    }
+
+    @FXML
+    public void onStartSesion(MouseEvent event) {
+        ViewFactory viewFacto = new ViewFactory();
+        viewFacto.viewMenu();
     }
 }

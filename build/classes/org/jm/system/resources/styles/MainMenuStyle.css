@@ -1,0 +1,87 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Aug 31, 2026, 9:30:42 PM
+    Author     : jeff2
+*/
+
+.root {
+    -fx-background-color: #121212;
+    -fx-font-family: "Arial Black", "Segoe UI Bold", sans-serif;
+}
+.border-pane {
+    -fx-background-color: #121212;
+}
+
+/* Área central vacía donde se cargarán los formularios */
+.anchor-pane {
+    -fx-background-color: #1e1e1e;
+    -fx-border-color: #cc0000;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+}
+
+.hbox {
+    -fx-background-color: #1b1b1b;
+    -fx-padding: 8px 15px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-border-color: #8b0000;
+    -fx-border-width: 0 0 3px 0; /* Borde inferior rojo quemado */
+    -fx-spacing: 15px;
+}
+
+.hbox Label{
+    -fx-text-fill:#cc0000;
+    -fx-font-size: 18px;
+}
+
+.vbox {
+    -fx-background-color: #0d0d0d;
+    -fx-padding: 20px 10px;
+    -fx-spacing: 12px;
+    -fx-min-width: 180px;
+    -fx-border-color: #8b0000;
+    -fx-border-width: 0 2px 0 0; /* Borde derecho divisorio */
+}
+
+/* Botones de navegación lateral ("Inicio", "Perfil", "Configuración", "Cerrar Sesión") */
+.vbox .button {
+    -fx-background-color: #cc0000;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 0px; /* Bordes rectos tipo bloque */
+    -fx-border-color: #ffd700;   /* Detalle dorado estético */
+    -fx-border-width: 0 0 0 4px; /* Acento dorado lateral */
+    -fx-padding: 10px 15px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-cursor: hand;
+}
+
+/* Efecto al pasar el cursor (Hover) */
+.vbox .button:hover {
+    -fx-background-color: #e60000;
+    -fx-text-fill: #ffd700;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 0 0 0 6px;
+}
+
+/* Efecto al hacer clic (Pressed) */
+.vbox .button:pressed {
+    -fx-background-color: #8b0000;
+    -fx-text-fill: #cccccc;
+}
+
+/* Configuración especial para el botón de cerrar sesión */
+.vbox .button:last-child {
+    -fx-background-color: #1a1a1a;
+    -fx-border-color: #cc0000;
+    -fx-border-width: 1px 1px 1px 4px;
+}
+
+.vbox .button:last-child:hover {
+    -fx-background-color: #cc0000;
+    -fx-text-fill: #ffffff;
+}

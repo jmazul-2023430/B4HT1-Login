@@ -9,8 +9,11 @@ import java.io.UncheckedIOException;
 import java.net.URL;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Stage;
 import org.jm.system.ClasePrincipal;
+import org.jm.system.controller.MainMenuController;
 
 /**
  *
@@ -53,7 +56,13 @@ public class ViewFactory {
                 case "register" -> {
                     SceneManager.getInstanciaSceneManager().getStagePrincipal().setTitle("REGISTRO DE CAMARADAS");
                     SceneManager.getInstanciaSceneManager().getStagePrincipal().setResizable(false);
-                    scene = loadFileFXML("RegisterView.fxml",500,500);
+                    scene = loadFileFXML("RegisterView.fxml", 500, 500);
+                }
+
+                case "menu" -> {
+                    SceneManager.getInstanciaSceneManager().getStagePrincipal().setTitle("MENU DE CAMARADAS");
+                    SceneManager.getInstanciaSceneManager().getStagePrincipal().setResizable(false);
+                    scene = loadFileFXML("MainMenuView.fxml", 500, 500);
                 }
                 default ->
                     scene = loadFileFXML("LoginView.fxml", 400, 500);
@@ -68,8 +77,12 @@ public class ViewFactory {
     public void viewLogin() {
         loadScene("login");
     }
-    
-    public void viewRegister(){
+
+    public void viewRegister() {
         loadScene("register");
+    }
+    
+    public void viewMenu(){
+        loadScene("menu");
     }
 }
