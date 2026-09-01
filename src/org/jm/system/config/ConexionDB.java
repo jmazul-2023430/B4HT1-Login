@@ -24,8 +24,10 @@ public class ConexionDB {
                     Enviroment.USER, Enviroment.PASSWORD);
         } catch (ClassNotFoundException sqlException) {
             System.out.println("Error de clae no encontrada");
-        } catch (SQLException sqlException) {
-            System.out.println("Eror de conexion sql");
+        }
+        catch (SQLException sqlException) {
+            System.out.println("Error de conexion sql");
+            sqlException.printStackTrace();
         } catch (Exception e) {
             System.out.println("Error padre" + e.getMessage());
         }
